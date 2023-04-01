@@ -8,11 +8,11 @@ export default function App() {
   const [showPasswordChecklist, setShowPasswordChecklist] = useState(true);
   // console.log(password);
   // console.log(passwordConfirm);
-  
+
 // cacher le PasswordChecklist lorsque l'utilisateur à insérer tout les caractères qu'il faut pour définir son mot de passe
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
-    if (e.target.value.length >= 8) {
+    if (e.target.value.length >= 10) {
       setShowPasswordChecklist(false);
     } else {
       setShowPasswordChecklist(true);
@@ -46,7 +46,7 @@ export default function App() {
           <input
             type="password"
             placeholder="Confirmer le mot de passe"
-            className="border-2 border-black rounded-md py-1 text-xl focus:outline-none p-2"
+            className="border-2 border-black rounded-md py-1 text-xl focus:outline-none p-2 w-full"
             onChange={(e) => setPasswordConfirm(e.target.value)}
           />
         </div>
