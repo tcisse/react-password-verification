@@ -9,21 +9,23 @@ export default function App() {
   // console.log(passwordConfirm);
 
   return (
-    <div className="w-96 mx-auto flex justify-center items-center">
+    <div className="w-96 mx-auto flex justify-center items-center pt-20">
       <form className="space-y-5">
         <div className="flex flex-col">
-          <label>Password</label>
+          <label className="text-semibold">Password</label>
           <input
-            type="Name"
-            className="border-2 border-lime-600 rounded-md py-1 text-2xl focus:outline-none p-2"
+            type="password"
+            placeholder="Entrer votre mot de passe"
+            className="border-2 border-black rounded-md py-1 text-xl focus:outline-none p-2"
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div className="flex flex-col">
-          <label>Confirm password</label>
+          <label className="text-semibold">Confirm password</label>
           <input
             type="password"
-            className="border-2 border-lime-600 rounded-md py-1 text-2xl focus:outline-none p-2"
+            placeholder="Confirmer le mot de passe"
+            className="border-2 border-black rounded-md py-1 text-xl focus:outline-none p-2"
             onChange={(e) => setPasswordConfirm(e.target.value)}
           />
         </div>
@@ -32,10 +34,10 @@ export default function App() {
           minLength={10}
           value={password}
           valueAgain={passwordConfirm}
-          className="text-xs text-black"
+          className="text-xs font-bold"
           iconComponents={{
-            ValidIcon: <MdDone size={15} />,
-            InvalidIcon: <MdClose size={15} />,
+            ValidIcon: <MdDone size={20} className="text-green-500" />,
+            InvalidIcon: <MdClose size={20} className="text-red-500" />,
           }}
           messages={{
             number: "doit comporter des nombres",
